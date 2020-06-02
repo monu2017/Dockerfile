@@ -1,8 +1,8 @@
 FROM centos
 
-RUN yum install httpd -y
+RUN dnf install httpd -y
 
-RUN yum install python3 -y
+RUN dnf install python3 -y
 
 COPY index.html /var/www/html/
 
