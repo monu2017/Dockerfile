@@ -1,12 +1,11 @@
-FROM centos
+FROM centos:7
+RUN yum install python3 -y
 
-RUN dnf install httpd -y
-
-RUN dnf install python3 -y
+RUN yum install httpd -y
 
 COPY index.html /var/www/html/
 
-CMD DFOREGROUND
+CMD /usr/sbin/httpd -DFOREGROUND
 
 EXPOSE 80
 
